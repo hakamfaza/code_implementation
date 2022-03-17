@@ -33,7 +33,7 @@ const discont = ({kodePromo, totalPrice, distance, tax}) => {
     }
   }
 
-  const discont = getDiscount()
+  const totalDiscont = getDiscount()
 
   const getDistance = () => {
     if (distance > 2) {
@@ -57,22 +57,22 @@ const discont = ({kodePromo, totalPrice, distance, tax}) => {
 
   // return {
   //   Harga		: totalPrice,
-  //   Potongan	: discont,
+  //   Potongan	: totalDiscont,
   //   BiayaAntar	: totalDistancePrice,
   //   Pajak		: totalTax,
-  //   SubTotal	: totalPrice - discont + totalDistancePrice + totalTax
+  //   SubTotal	: totalPrice - totalDiscont + totalDistancePrice + totalTax
   // }
 
   return `
   Harga		: ${totalPrice}
-  Potongan	: ${discont}
+  Potongan	: ${totalDiscont}
   Biaya Antar	: ${totalDistancePrice} 
   Pajak		: ${totalTax}
-  SubTotal	: ${totalPrice - discont + totalDistancePrice + totalTax}
+  SubTotal	: ${totalPrice - totalDiscont + totalDistancePrice + totalTax}
   `
 }
 
-console.log(discont({ totalPrice: 100000, kodePromo: 'PIJARFOOD5', distance: 5, tax: true }))
+console.log(discont({ totalPrice: 1000000, kodePromo: 'PIJARFOOD5', distance: 5, tax: true }))
 // console.log(discont({ totalPrice: 100000, kodePromo: 'PIJARFOOD5', distance: 5, tax: false }))
 // console.log(discont({ totalPrice: 50000, kodePromo: 'PIJARFOOD5', distance: 3, tax: true }))
 
