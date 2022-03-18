@@ -11,8 +11,8 @@ const PIJAR_DATA = {
   },
   firstRate: 5000,
   extraFirstPrice: 3000,
-  priceReduction: 1000,
-  taxDiscount: 5
+  priceReduction: 1000, // 2*3000-5000
+  taxPercent: 5
 }
 
 const discont = ({kodePromo, totalPrice, distance, tax}) => {
@@ -22,7 +22,7 @@ const discont = ({kodePromo, totalPrice, distance, tax}) => {
   const extraFirstPrice = PIJAR_DATA.extraFirstPrice
   const priceReduction = PIJAR_DATA.priceReduction
 
-  const taxDiscount = PIJAR_DATA.taxDiscount
+  const taxPercent = PIJAR_DATA.taxPercent
 
   const getDiscount = () => {
     if (totalPrice >= dataPromo.minTotalPrice) {
@@ -47,7 +47,7 @@ const discont = ({kodePromo, totalPrice, distance, tax}) => {
 
   const getTax = () => {
     if (tax) {
-      return totalPrice / 100 * taxDiscount
+      return totalPrice / 100 * taxPercent
     } else {
       return 0
     }
