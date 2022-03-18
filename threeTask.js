@@ -10,17 +10,13 @@ const divieAndSort = (num) => {
         result += numSplit[i].split('').sort((a, b) => a - b).join('');
       }
     } else {
-      console.log('Angka melebihi 9007199254740991!')
+      console.log('Angka melebihi batas maximum!')
     }
   } else {
     console.log('Input harus number!')
   }
 
-  if (result.length !== 0) {
-    console.log(result)
-  } else {
-    return 0
-  }
+  return result.length !== 0 ? console.log(result) : 0
 }
 
 divieAndSort(5956560159466056)
