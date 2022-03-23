@@ -1,17 +1,25 @@
 const palindromDetection = (str) => {
-  const detection = str.toLowerCase().split('').reverse().join('');
-  if (detection === str.toLowerCase()) {
-    return 'Teks merupakan palindrom!';
+  if (typeof (str) === 'string') {
+    const detection = str.toLowerCase().split('').reverse().join('');
+    if (detection === str.toLowerCase()) {
+      return 'Teks merupakan palindrom!';
+    } else {
+      return 'Teks bukan palindrom!';
+    }
   } else {
-    return 'Teks bukan palindrom!';
+    return 'Teks bukan string!'
   }
 }
 
-// console.log(palindromDetection('Malam'))
+console.log(palindromDetection('Malam'))
 
 const reverseWord = (keyword) => {
-  const reverse = keyword.split(' ').reverse(). join(' ');
-  return reverse;
+  if (typeof keyword === 'string') {
+    const reverse = keyword.split(' ').reverse().join(' ');
+    return reverse;
+  } else {
+    return 'Teks bukan string!'
+  }
 }
 
-// console.log(reverseWord('Saya belajar Javascript'));
+console.log(reverseWord('Saya belajar Javascript'));
